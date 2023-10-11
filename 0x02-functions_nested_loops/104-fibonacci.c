@@ -1,51 +1,38 @@
-#include <stdio.h>
-
+#include <unistd.h>
 
 /**
- * main _ The main function
- * 1 and 2, seperated by a comma
- * Return: 0.
+ * main - Entry point
+ *
+ * Description: Computes and prints the first 98 Fibonacci numbers
+ * separated by a comma and a space, followed by a new line.
+ *
+ * Return: Always 0
  */
-
-
 int main(void)
-
-
 {
-	int count;
-	unsigned long fib1 = 0, fib2 = 1, sum;
-	unsigned long fib1_half1, fib2_half1, fib2_half2;
-	unsigned long half1, half2;
+	unsigned int a = 1, b = 2, next;
+	int count = 2;  /* We've already got the first two numbers */
 
+	write(1, "1, 2, ", 6);
 
-	for (count = 0; count < 92; count++)
+	while (count < 98)
 	{
-	sum = fib1 + fib2;
-	printf("%lu, ", sum);
-	fib1 = fib2;
-	fib2 = sum;
+		next = a + b;
+		a = b;
+		b = next;
+		write(1, &next, 1);
+
+		if (count < 97)
+		{
+			write(1, ", ", 2);
+		}
+		else
+		{
+			write(1, "\n", 1);
+		}
+
+		count++;
 	}
-	fib1_half1 = fib1 / 10000000000;
-	fib2_half1 = fib2 / 10000000000;
-	fib1_half2 = fib1 % 10000000000;
-	fib2_half2 = fib2 % 10000000000;
-	for (count = 93; count < 99; count++)
-	{
-	half1 = fib1_half1 + fib2_half1;
-	half2 = fib1_half2 + fib2_half2;
-	if (fib1_half2 + fib2_half2 > 9999999999)
-	{
-	half1 += 1;
-	half2 %= 10000000000;
-	}
-	printf("%lu%lu", half1, half2);
-	if (count != 98)
-	printf(", ");
-	fib1_half1 = fib2_half1;
-	fib1_half2 = fib2_half2;
-	fib2_half1 = half1;
-	fib2_half2 = half2;
-	}
-	printf("\n");
+
 	return (0);
 }
