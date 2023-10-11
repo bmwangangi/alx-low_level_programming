@@ -1,27 +1,29 @@
 #include <stdio.h>
 
-
 /**
-  * main - the main printing funtion
-  * less than 4000000.
-  * Return: 0.
-  */
-
-
+ * main - Entry point
+ *
+ * Description: Computes and prints the sum of even Fibonacci terms
+ * where the terms do not exceed 4,000,000.
+ *
+ * Return: Always 0
+ */
 int main(void)
 {
-	int i = 0;
-	long j = 1, k = 2, sum = k;
+	int first = 1, second = 2, next, sum = 0;
 
-
-	while (k + j < 4000000)
+	while (second <= 4000000)
 	{
-		k += j;
-		if (k % 2 == 0)
-		sum += k;
-		j = k - j;
-		++i;
+		if (second % 2 == 0)
+		{
+			sum += second;
+		}
+		next = first + second;
+		first = second;
+		second = next;
 	}
-	printf("%ld", sum);
+
+	printf("%d\n", sum);
+
 	return (0);
 }
