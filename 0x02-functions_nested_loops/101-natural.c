@@ -12,6 +12,9 @@ int main(void)
 {
     int sum = 0;
     int i;
+    char buffer[16];
+    int len = 0;
+    int j;
 
     for (i = 0; i < 1024; i++)
     {
@@ -20,9 +23,6 @@ int main(void)
             sum += i;
         }
     }
-
-    char buffer[16];
-    int len = 0;
 
     while (sum > 0)
     {
@@ -37,7 +37,7 @@ int main(void)
         len = 1;
     }
 
-    for (int j = len - 1; j >= 0; j--)
+    for (j = len - 1; j >= 0; j--)
     {
         write(1, &buffer[j], 1);
     }
