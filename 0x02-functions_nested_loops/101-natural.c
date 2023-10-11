@@ -10,40 +10,40 @@
  */
 int main(void)
 {
-    int sum = 0;
-    int i;
-    char buffer[16];
-    int len = 0;
-    int j;
+	int sum = 0;
+	int i;
+	char buffer[16];
+	int len = 0;
+	int j;
 
-    for (i = 0; i < 1024; i++)
-    {
-        if (i % 3 == 0 || i % 5 == 0)
-        {
-            sum += i;
-        }
-    }
+	for (i = 0; i < 1024; i++)
+	{
+		if (i % 3 == 0 || i % 5 == 0)
+		{
+			sum += i;
+		}
+	}
 
-    while (sum > 0)
-    {
-        buffer[len] = (sum % 10) + '0';
-        sum /= 10;
-        len++;
-    }
+	while (sum > 0)
+	{
+		buffer[len] = (sum % 10) + '0';
+		sum /= 10;
+		len++;
+	}
 
-    if (len == 0)
-    {
-        buffer[0] = '0';
-        len = 1;
-    }
+	if (len == 0)
+	{
+		buffer[0] = '0';
+		len = 1;
+	}
 
-    for (j = len - 1; j >= 0; j--)
-    {
-        write(1, &buffer[j], 1);
-    }
+	for (j = len - 1; j >= 0; j--)
+	{
+		write(1, &buffer[j], 1);
+	}
 
-    write(1, "\n", 1);
+	write(1, "\n", 1);
 
-    return (0);
+	return (0);
 }
 
