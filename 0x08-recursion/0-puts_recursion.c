@@ -1,8 +1,14 @@
 #include <stdio.h>
-
 /**
- *  * @s: The string to be printed
- *   */
+ *  * _puts_recursion - Prints a string using recursion
+ *   *
+ *    * @s: The string to be printed
+ *     *
+ *      * Description:
+ *       * This function recursively prints the characters of the string @s
+ *        * until it reaches the null terminator '\0'.
+ *         */
+
 
 void _puts_recursion(char *s)
 {
