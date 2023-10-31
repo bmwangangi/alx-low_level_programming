@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 	}
 
 	a = atoi(argv[1]);
-	a = atoi(argv[2]);
+	b = atoi(argv[2]);
 
 	if (a == 0 || b == 0)
 	{
