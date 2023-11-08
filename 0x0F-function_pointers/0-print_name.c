@@ -1,33 +1,19 @@
+#include "function_pointers.h"
 #include <stdio.h>
 
 /**
- * print_string - Prints a string to the standard output.
- * @str: Pointer to the string to be printed.
- */
-void print_string(char *str)
-{
-	printf("%s\n", str);
-}
-
-/**
- * print_name - Prints the given name using a provided function pointer.
- * @name: Pointer to the name to be printed.
- * @f: Function pointer to the function that prints the name.
+ * print_name - prints a name using a pointer to a function
+ * @name: the string to print
+ * @f: a pointer to the function that prints the name
+ *
+ * Description:
+ * This function a string and a function pointer as arguments and prints
+ * the name using the function.
  */
 void print_name(char *name, void (*f)(char *))
 {
+	if (name == NULL || f == NULL)
+		return;
+
 	f(name);
-}
-
-/**
- * main - Entry point of the program.
- *
- * Return: Always 0.
- */
-int main(void)
-{
-	char *name = "John Doe";
-
-	print_name(name, print_string);
-	return (0);
 }
