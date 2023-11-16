@@ -11,6 +11,7 @@
  */
 list_t *add_node_end(list_t **head, const char *str)
 {
+	list_t *temp;
 	/* Declare and initialize a new node */
 	list_t *new = malloc(sizeof(list_t));
 
@@ -29,7 +30,6 @@ list_t *add_node_end(list_t **head, const char *str)
 	}
 
 	/* Assign values to the new node */
-	new->len = len;
 	new->next = NULL;
 	/* Check if the list is empty */
 	if (*head == NULL)
@@ -38,7 +38,7 @@ list_t *add_node_end(list_t **head, const char *str)
 		return (new);
 	}
 	/* Traverse the list to find the last node */
-	list_t *temp = *head;
+	temp = *head;
 
 	while (temp->next)
 		temp = temp->next;
