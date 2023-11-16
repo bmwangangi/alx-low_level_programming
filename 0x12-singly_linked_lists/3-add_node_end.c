@@ -17,11 +17,7 @@ list_t *add_node_end(list_t **head, const char *str)
 	if (!new)
 		return (NULL);
 
-	/* Calculate the length of the string */
-	unsigned int len = 0;
-
-	while (str[len])
-		len++;
+	new->len = strlen(str);
 
 	/* Copy the string to the new node */
 	new->str = strdup(str);

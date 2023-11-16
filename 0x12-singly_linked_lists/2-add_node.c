@@ -19,11 +19,7 @@ list_t *add_node(list_t **head, const char *str)
 		return (NULL);
 
 	/* Initialize variable to store the length of the string */
-	unsigned int len = 0;
-
-	/* Calculate the length of the string */
-	while (str[len])
-		len++;
+	new->len = strlen(str);
 
 	/* Copy the string to the new node */
 	new->str = strdup(str);
@@ -35,7 +31,6 @@ list_t *add_node(list_t **head, const char *str)
 	}
 
 	/* Assign values to the new node */
-	new->len = len;
 	new->next = *head;
 
 	/* Update the head pointer to point to the new node */
