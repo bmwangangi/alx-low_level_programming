@@ -1,8 +1,8 @@
 #include "stdio.h"
 
 /**
- * bmain - prints before the
- * main function is executed
+ * bmain - function executed before the main function
+ * Return: void nmber type
  */
 void __attribute__((constructor)) bmain()
 {
