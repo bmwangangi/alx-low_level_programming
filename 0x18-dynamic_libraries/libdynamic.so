@@ -1,1 +1,18 @@
-ELF
+#include "main.h"
+
+/* Implement your functions here */
+/* For example, let's implement _strlen as a placeholder */
+
+int _strlen(char *s)
+{
+    int count = 0;
+
+    while (*s != '\0')
+    {
+        count++;
+        s++;
+    }
+
+    return count;
+}
+
